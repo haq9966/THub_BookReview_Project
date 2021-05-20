@@ -14,10 +14,10 @@
 
                     <form action="/addproducts" method="POST" enctype="multipart/form-data">
                         <label for="IBM">IBN number</label>
-                        <input type="text" class="form-control" name="name" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" name="ibn" aria-describedby="emailHelp">
 
                         <label for="">Book Title</label>
-                        <input type="text" class="form-control" name="catogary">
+                        <input type="text" class="form-control" name="Name">
 
                         <label for="">Author</label>
                         <input type="text" class="form-control" name="Author">
@@ -32,18 +32,18 @@
                         <textarea class="form-control" name="description" style="height: 5cm;"></textarea>
 
                         <label for="">Link to purchase</label>
-                        <input type="text" class="form-control" name="purchaselink">
+                        <input type="url" class="form-control" name="purchaselink">
 
                         <label for="">Year of Publication</label>
                         <input type="text" class="form-control" name="yop">
 
                         <label for="">Genre</label>
-                        <input type="checkbox" name="price" id="Genre" name="Genre" value="Action">Action
-                        <input type="checkbox" name="price" id="Genre" name="Genre" value="Comedy">Comedy
-                        <input type="checkbox" name="price" id="Genre" name="Genre" value="Drama">Drama
-                        <input type="checkbox" name="price" id="Genre" name="Genre" value="Tragedy">Tragedy
-                        <input type="checkbox" name="price" id="Genre" name="Genre" value="Fantasy">Fantasy
-                        <input type="checkbox" name="price" id="Genre" name="Genre" value="Slice of Life">Slice of Life
+                        <input type="checkbox" name="Genre" id="Genre" name="Genre" value="Action">Action
+                        <input type="checkbox" name="Genre" id="Genre" name="Genre" value="Comedy">Comedy
+                        <input type="checkbox" name="Genre" id="Genre" name="Genre" value="Drama">Drama
+                        <input type="checkbox" name="Genre" id="Genre" name="Genre" value="Tragedy">Tragedy
+                        <input type="checkbox" name="Genre" id="Genre" name="Genre" value="Fantasy">Fantasy
+                        <input type="checkbox" name="Genre" id="Genre" name="Genre" value="Slice of Life">Slice of Life
 
                         <br>
                         <button type="submit" class="btn btn-primary mt-3">Submit</button>
