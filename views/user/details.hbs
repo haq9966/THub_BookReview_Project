@@ -24,50 +24,23 @@
             <div class="row projects">
                 <div class="col-sm-6 col-lg-12 item">
                     <div class="row">
-                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/692A/production/_112922962_apple.jpg"></a></div>
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" src="/productimages/{{product._id}}.jpg"></a></div>
                         <div class="col">
-                            <h3 class="name" style="color: maroon;"><strong>Apple 1</strong></h3>
-                            <p class="description" style="color:crimson">Author : A BIG Apple Tree</p>
-                            <p class="description">A beautiful red apple, which looks incredibly tasty.</p>
-                             <p class="description">ISBN : 1800 801 152 6510</p>
+                            <h3 class="name" style="color: maroon;"><strong>{{product.Name}}</strong></h3>
+                            <p class="description" style="color:crimson">Author : {{product.Author}}</p>
+                            <p class="description">{{product.description}}</p>
+                             <p class="description">ISBN :{{product.ibn}}</p>
+                              <p class="description">Year of Publication :{{product.yop}}</p>
+                              <p class="description">Genre :{{product.price}}</p>
+                              <p class="description"><a href={{product.purchaselink}}><img src="/images/580b57fcd9996e24bc43c462.png" style="width:10rem;height: 3rem;"></a></p>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 style="text-align: center;margin-top: 0px;margin-bottom: -2px;">Explore</h1>
-                    <p style="font: 10rem ; text-align: center;font-family: 'Almendra SC', serif;">Tope BooKs</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="card mb-4 box-shadow rounded-0 " data-aos="fade-up"><img
-                            class="card-img-top  d-block rounded-0" height="250px" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/692A/production/_112922962_apple.jpg" >
-                        <div class="card-body">
-                            <h4 class="card-title">{{this.name}}</h4>
-                            <div class="product-rating">
-                                <img src="" style="width: 90px;height: auto;">
-                            </div>
-                            <h6 class="text-muted card-subtitle mb-2">{{this.place}}</h6>
-                            {{!-- <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                                dapibus ac facilisis in, egestas eget qu ghgjhghg glo.</p> --}}
-                            <div class="photo-tags">
-                                <ul>
-                                    <li><a class="text-uppercase" href="/details"
-                                            style="background: rgb(92,196,238);text-align: center;font-family: Aclonica, sans-serif;">View
-                                            Details</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-    </section>
+        
 <div class="container">
             <div class="tab-pane fade active show" id="pills-reviews" role="tabpanel" aria-labelledby="pills-reviews-tab">
                 <div class="bg-white rounded shadow-sm p-4 mb-4 clearfix graph-star-rating">
@@ -88,7 +61,7 @@
                     <h5 class="mb-1">All Ratings and Reviews</h5>
                     <div class="reviews-members pt-4 pb-4">
                         <div class="media">
-                            <a href="#"><img alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-pill" style="height: 50%; width: 50%"></a>
+                            <a href="#"><img alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-pill" style="height: 5rem; width:5rem"></a>
                             <div class="media-body">
                                 <div class="reviews-members-header">
                                     <span class="star-rating float-right">

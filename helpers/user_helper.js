@@ -46,5 +46,20 @@ doLogin  : (userData) => {
             resolve({ status: false })
         }
     })
+},
+getAllProducts:()=>{
+    return new Promise(async(resolve,reject)=>{
+        let products=await db.get().collection('books').find().toArray()
+        resolve(products)
+    })
+
+},
+getSelectedProducts:(data)=>{
+    return new Promise((resolve,reject)=>{
+        db.get().collection(collection.BOOK_COLLECTION).findOne({_id:objectId(data)}).then((product)=>{
+            resolve(product)
+            console.log(product);
+        })
+    })
 }
 }
