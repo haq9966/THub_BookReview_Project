@@ -1,13 +1,52 @@
-
-<div class="container">
-<div class="row">
+<header class="header-dark">        
+    <nav class="navbar sticky-top navbar-dark navbar-expand-lg navigation-clean-search">
+            <div class="container"><a class="navbar-brand" href="#">Company Name</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="#">Dropdown </a>
+                            <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
+                        </li>
+                    </ul>
+                    <form class="form-inline mr-auto" target="_self">
+                        <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" id="search-field" name="search"></div>
+                    </form>
+					{{#if user}}
+					<div class="nav-item dropdown">
+					<a href="#" data-toggle="dropdown" class="nav-item nav-link"><img src="/productimages/{{user.username}}.jpg" class="avatar" alt="Avatar"><b class="c action-button" >{{user.username}}</b></a>
+					<div class="dropdown-menu">
+					<a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
+					<a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a>
+					<a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
+					<div class="divider dropdown-divider"></div>
+					<a href="/logout" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a>
+					</div>
+					</div>
+					{{else}}
+					<span class="navbar-text"><a class="login" href="/login">Log In</a></span><a class="btn btn-light action-button" role="button" href="/login">Sign Up</a>
+					{{/if}}
+                </div>
+            </div>
+        </nav>
+        <div class="container hero">
+            <div class="row">
+                <div class="col-md-8 col-lg-8 offset-md-2">
+                    <h1 class="text-center">The Revolution is Here.</h1>
+                    {{!-- <div class="embed-responsive embed-responsive-16by9"><iframe src="product.hbs" class="embed-responsive-item"></iframe></div> --}}
+                </div>
+            </div>
+        </div>
+    </header>
+         <div class="container ml-5 mt-5">
+   
+<div class="row" style="">
     {{#each data}}
-            <div class="col-md-3 p-4">
+            <div class="col-md-2" style="">
                 <div class="row">
-                    <div class="card mb-4 box-shadow rounded-0 " data-aos="fade-up" style="height:auto;background-color:darkkhaki;">
-                        <img class="card-img-top  d-block rounded-0" height="250px" src="/productimages/{{this._id}}.jpg" alt="Card image cap" style="width: auto;hight: 150px">
+                    <div class="card mb-2 box-shadow rounded-5" data-aos="fade-up" style="height:auto;background-color:darkkhaki;">
+                        <img class="card-img-top  d-block rounded-5"  height="250px" src="/productimages/{{this._id}}.jpg" alt="Card image cap" style="width: auto;hight: 150px">
                         <div class="card-body">
-                           <a href="/details/{{this._id}}"> <h3 class="card-title">{{this.Name}}</h3></a>
+                           <a href="/details/{{this._id}}"> <h4 class="card-title" style="text-align:center">{{this.Name}}</h4></a>
                              {{!-- <p class="card-text"><b>{{this.price}}/-</b></p> --}}
 
                             {{!-- <p class="card-text">{{this.describtion}}</p> --}}
@@ -17,10 +56,9 @@
                 </div>
         </div>
         {{/each}}
-
-</div>
+       </div>
 <div class="container">
-<div class="row mb-4">
-      <a href="/addproducts" class="btn btn-success ml-auto my-5" style="position: fixed;bottom: 0;right: 0;">Add your Books</a>
+    <div class="row mb-4">
+      <a href="/addproducts" class="btn btn-danger ml-auto my-5 mr-5 rounded-pill" style="position: fixed;bottom: 0;right:0;">ADD</a>
     </div>
 </div>

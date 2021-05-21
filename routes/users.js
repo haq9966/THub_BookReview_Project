@@ -80,5 +80,10 @@ router.post("/addreview", (req, res) => {
     res.redirect('/')
     })
 });
+router.get('/logout',(req,res)=>{
+  req.session.userloggedIn=false
+  req.session.user=null
+  res.redirect('/')
+})
 
 module.exports = router;

@@ -60,9 +60,9 @@ getAllProducts:()=>{
     })
 
 },
-getAllReviews:()=>{
+getAllReviews:(id)=>{
     return new Promise(async(resolve,reject)=>{
-        let review=await db.get().collection('review').find().toArray()
+        let review=await db.get().collection('review').find({bookid:id}).toArray()
         resolve(review)
     })
 
