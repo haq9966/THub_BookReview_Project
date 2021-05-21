@@ -40,7 +40,39 @@
             </div>
         </div>
         <div>
-        
+            <div class="container mt-2">
+        <div class="bg-white rounded shadow-sm p-4 mb-5 rating-review-select-page">
+                    <h5 class="mb-4">Leave Comment</h5>
+                    <p class="mb-2">Rate the Place</p>
+                    <div class="mb-4">
+                        <span class="star-rating">
+                                 <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
+                                 <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
+                                 <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
+                                 <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
+                                 <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
+                                 </span>
+                    </div>
+                   
+            
+                   
+                    <form action='/addreview' method='post'> 
+                        <div class="form-group">
+                            <label>Your Comment</label>
+                            <textarea name="review" class="form-control"></textarea>
+                            <input type="text" name="userid" value="{{user._id}}" hidden>
+                            <input type="text" name="username" value="{{user.username}}" hidden>
+                            <input type="text" name="bookid" value="{{product._id}}" hidden>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-sm" type="submit" onClick="confirm()"> Submit Comment </button>
+                        </div>
+                    </form>
+                </div>
+                    <hr>
+                    
+                    </form>
+                </div></div>
 <div class="container">
             <div class="tab-pane fade active show" id="pills-reviews" role="tabpanel" aria-labelledby="pills-reviews-tab">
                 <div class="bg-white rounded shadow-sm p-4 mb-4 clearfix graph-star-rating">
@@ -87,38 +119,7 @@
                     </div>
                     <hr>
                       {{/each}} 
-               <div class="bg-white rounded shadow-sm p-4 mb-5 rating-review-select-page">
-                    <h5 class="mb-4">Leave Comment</h5>
-                    <p class="mb-2">Rate the Place</p>
-                    <div class="mb-4">
-                        <span class="star-rating">
-                                 <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
-                                 <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
-                                 <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
-                                 <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
-                                 <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
-                                 </span>
-                    </div>
-                   
-            
-                   
-                    <form action='/addreview' method='post'> 
-                        <div class="form-group">
-                            <label>Your Comment</label>
-                            <textarea name="review" class="form-control"></textarea>
-                            <input name="userid" value="{{user._id}}" hidden>
-                            <input name="username" value="{{user.username}}" hidden>
-                            <input name="bookid" value="{{product._id}}" hidden>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-primary btn-sm" type="button"> Submit Comment </button>
-                        </div>
-                    </form>
-                </div>
-                    <hr>
-                    
-                    </form>
-                </div>
+               
             </div>
         </div>
     </div>
@@ -127,5 +128,3 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
-
-</html>

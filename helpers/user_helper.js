@@ -23,8 +23,12 @@ module.exports = {
         })
     },
     addreview:(review)=>{
-        db.get().collection('review').insertOne(review).then((data)=>{
-            resolve(data)       })
+        return new Promise(async (resolve, reject) => {
+         let data=await db.get().collection(collection.REVIEW_COLLECTION).insertOne(review)
+             console.log(",,,,,,,,,,,,,,,,,,,,",data.ops[0]);
+            resolve(data.ops[0])       
+        
+    })
     },
 doLogin  : (userData) => {
     return new Promise(async (resolve, reject) => {
@@ -56,18 +60,17 @@ getAllProducts:()=>{
     })
 
 },
-// getAllReviews:()=>{
-//     return new Promise(async(resolve,reject)=>{
-//         let review=await db.get().collection('review').find().toArray()
-//         resolve(review)
-//     })
+getAllReviews:()=>{
+    return new Promise(async(resolve,reject)=>{
+        let review=await db.get().collection('review').find().toArray()
+        resolve(review)
+    })
 
-// },
+},
 getSelectedProducts:(id)=>{
-    var myId = JSON.parse(id);
-    return new Promise((resolve, reject) => {  
-        console.log(id);
-        db.get().collection(collection.BOOK_COLLECTION).findOne({ _id: objectId(myId)}).then((data) => {
+    return new Promise((resolve, reject) => { 
+        console.log("..............ID :"+id+"................."); 
+        db.get().collection(collection.BOOK_COLLECTION).findOne({ _id: objectId(id)}).then((data) => {
             resolve(data)
         })
         })

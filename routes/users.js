@@ -55,9 +55,9 @@ router.get('/details/:id',async(req,res)=>{
   
 let product=await userHelper.getSelectedProducts(req.params.id)
 user=req.session.user
-  // userHelper.getAllReviews(req.params.id)
-    //  console.log(reviews);
-  res.render('user/details',{product,user})
+reviews=await userHelper.getAllReviews(req.params.id)
+   console.log(reviews);
+  res.render('user/details',{product,reviews,user})
 })
 router.get("/addproducts", verifylogin,function (req, res, next) {
   res.render("user/addproducts");
@@ -75,11 +75,10 @@ router.post("/addproducts", (req, res) => {
     });
   });
 });
-// router.post("/addreview", (req, res) => {
-//   userHelper.addreview(req.body).then((response) => {
-//     console.log(response);
-//         res.render("user/details");
-//     });
-// });
+router.post("/addreview", (req, res) => {
+  userHelper.addreview(req.body).then(()=>{
+    res.redirect('/')
+    })
+});
 
 module.exports = router;
