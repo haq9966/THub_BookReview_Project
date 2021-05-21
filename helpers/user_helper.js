@@ -3,12 +3,11 @@ var collection = require('../config/collection')
 const { resolve, reject } = require('promise')
 const { response } = require('express')
 const bcrypt = require('bcrypt')
-var objectId = require('mongodb').ObjectID
+var objectId = require('mongodb').ObjectID;
 module.exports = {
-    doSignUp: (userData) => {
+    doSignUp: (userData,callback) => {
         return new Promise(async (resolve, reject) => {
-            let newPassword = userData.password.toString();
-            userData.password = await bcrypt.hash(newPassword, 10)
+            userData.password = await bcrypt.hash(userData.password, 10)
             db.get().collection(collection.USERS_COLLECTION).insertOne(userData).then((data) => {
                 resolve(data.ops[0])
             })
@@ -17,18 +16,21 @@ module.exports = {
         })
     },
     addproducts:(products,callback)=>{
-        products.price=parseInt(products.price)
         db.get().collection('books').insertOne(products).then((data)=>{
 
             callback(data.ops[0]._id)
 
         })
     },
+    addreview:(review)=>{
+        db.get().collection('review').insertOne(review).then((data)=>{
+            resolve(data)       })
+    },
 doLogin  : (userData) => {
     return new Promise(async (resolve, reject) => {
         let loginStatus = false
         let respons = {}
-        let user = await db.get().collection(collection.USERS_COLLECTION).findOne({ email: userData.emailid })
+        let user = await db.get().collection(collection.USERS_COLLECTION).findOne({ emailid: userData.emailid })
         if (user) {
             bcrypt.compare(userData.password, user.password).then((status) => {
                 if (status) {
@@ -54,12 +56,20 @@ getAllProducts:()=>{
     })
 
 },
-getSelectedProducts:(data)=>{
-    return new Promise((resolve,reject)=>{
-        db.get().collection(collection.BOOK_COLLECTION).findOne({_id:objectId(data)}).then((product)=>{
-            resolve(product)
-            console.log(product);
+// getAllReviews:()=>{
+//     return new Promise(async(resolve,reject)=>{
+//         let review=await db.get().collection('review').find().toArray()
+//         resolve(review)
+//     })
+
+// },
+getSelectedProducts:(id)=>{
+    var myId = JSON.parse(id);
+    return new Promise((resolve, reject) => {  
+        console.log(id);
+        db.get().collection(collection.BOOK_COLLECTION).findOne({ _id: objectId(myId)}).then((data) => {
+            resolve(data)
         })
-    })
+        })
 }
 }

@@ -31,7 +31,7 @@
                             <p class="description">{{product.description}}</p>
                              <p class="description">ISBN :{{product.ibn}}</p>
                               <p class="description">Year of Publication :{{product.yop}}</p>
-                              <p class="description">Genre :{{product.price}}</p>
+                              <p class="description">Genre :{{product.Genre}}</p>
                               <p class="description"><a href={{product.purchaselink}}><img src="/images/580b57fcd9996e24bc43c462.png" style="width:10rem;height: 3rem;"></a></p>
 
                         </div>
@@ -59,9 +59,10 @@
                 <div class="bg-white rounded shadow-sm p-4 mb-4 restaurant-detailed-ratings-and-reviews">
                     <a href="#" class="btn btn-outline-primary btn-sm float-right">Top Rated</a>
                     <h5 class="mb-1">All Ratings and Reviews</h5>
+                     {{#each reviews}}
                     <div class="reviews-members pt-4 pb-4">
                         <div class="media">
-                            <a href="#"><img alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-pill" style="height: 5rem; width:5rem"></a>
+                            <a href="#"><img alt="Generic placeholder image" src="/productimages/{{this.username}}.jpg" class="mr-3 rounded-pill" style="height: 5rem; width:5rem"></a>
                             <div class="media-body">
                                 <div class="reviews-members-header">
                                     <span class="star-rating float-right">
@@ -71,11 +72,11 @@
                                           <a href="#"><i class="icofont-ui-rating active"></i></a>
                                           <a href="#"><i class="icofont-ui-rating"></i></a>
                                           </span>
-                                    <h6 class="mb-1"><a class="text-black" href="#">Singh Osahan</a></h6>
+                                    <h6 class="mb-1"><a class="text-black" href="#">{{this.username}}</a></h6>
                                     <p class="text-gray">Tue, 20 Mar 2020</p>
                                 </div>
                                 <div class="reviews-members-body">
-                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections </p>
+                                    <p>{{this.review}}</p>
                                 </div>
                                 <div class="reviews-members-footer">
                                     <a class="total-like" href="#"><i class="icofont-thumbs-up"></i> 856M</a> <a class="total-like" href="#"><i class="icofont-thumbs-down"></i> 158K</a>
@@ -85,6 +86,7 @@
                         </div>
                     </div>
                     <hr>
+                      {{/each}} 
                <div class="bg-white rounded shadow-sm p-4 mb-5 rating-review-select-page">
                     <h5 class="mb-4">Leave Comment</h5>
                     <p class="mb-2">Rate the Place</p>
@@ -97,10 +99,16 @@
                                  <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
                                  </span>
                     </div>
-                    <form>
+                   
+            
+                   
+                    <form action='/addreview' method='post'> 
                         <div class="form-group">
                             <label>Your Comment</label>
-                            <textarea class="form-control"></textarea>
+                            <textarea name="review" class="form-control"></textarea>
+                            <input name="userid" value="{{user._id}}" hidden>
+                            <input name="username" value="{{user.username}}" hidden>
+                            <input name="bookid" value="{{product._id}}" hidden>
                         </div>
                         <div class="form-group">
                             <button class="btn btn-primary btn-sm" type="button"> Submit Comment </button>

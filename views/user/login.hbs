@@ -212,7 +212,7 @@ a {
                     <div class="login-space">
                          <form action="/login" method="POST">
                         <div class="login">
-                            <div class="group"> <label for="user" class="label">Username</label> <input name ="username" id="user" type="text" class="input" placeholder="Enter your username"> </div>
+                            <div class="group"> <label for="user" class="label">Username</label> <input name ="emailid" id="user" type="text" class="input" placeholder="Enter your username"> </div>
                             <div class="group"> <label for="pass" class="label">Password</label> <input name="password" id="pass" type="password" class="input" data-type="password" placeholder="Enter your password"> </div>
                             <div class="group"> <input name="check" id="check" type="checkbox" class="check" checked> <label for="check"><span class="icon"></span> Keep me Signed in</label> </div>
                             <div class="group"> <input type="submit" class="button" value="Sign In"> </div>
@@ -220,12 +220,12 @@ a {
                             <div class="foot"> <a href="#">Forgot Password?</a> </div>
                         </div>
                         </form>
-                       <form action="/signup" method="POST">
+                       <form action="/signup" method="POST"enctype="multipart/form-data">
                         <div class="sign-up-form">
-                            
+                            <div class="group"> <label for="user" class="label">profile pic</label> <input name="dp" id="dp" type="file" class="input"> </div>
                             <div class="group"> <label for="user" class="label">Username</label> <input name="username" id="user" type="text" class="input" placeholder="Create your Username"> </div>
                             <div class="group"> <label for="pass" class="label">Password</label> <input name="password" id="pass" type="password" class="input" data-type="password" placeholder="Create your password"> </div>
-                            <div class="group"> <label for="pass" class="label">Repeat Password</label> <input name="password" id="pass" type="password" class="input" data-type="password" placeholder="Repeat your password"> </div>
+                            {{!-- <div class="group"> <label for="pass" class="label">Repeat Password</label> <input name="password" id="pass" type="password" class="input" data-type="password" placeholder="Repeat your password"> </div> --}}
                             <div class="group"> <label for="email" class="label">Email Address</label> <input name="emailid" id="email" type="email" class="input" placeholder="Enter your email address"> </div>
                             <div class="group"> <input type="submit" class="button" value="Sign Up"> </div>
                             <div class="hr"></div>
