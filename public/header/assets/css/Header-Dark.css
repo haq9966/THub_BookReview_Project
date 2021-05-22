@@ -22,6 +22,7 @@
   .header-dark .navbar {
     padding-top: .75rem;
     padding-bottom: .75rem;
+    filter: brightness(200%) contrast(88%);
   }
 }
 
