@@ -1,178 +1,307 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .sammy-nowrap-2 {
 
-    <header class="text-truncate header-dark">
-        <nav class="navbar fixed-top navbar-dark navbar-expand-md bg-dark navigation-clean-search"
-            style="filter: blur(0px) brightness(105%) contrast(106%) grayscale(24%) hue-rotate(360deg);opacity: 0.98;">
-            <div class="container"><a class="navbar-brand" href="#">Company Name</a><button data-toggle="collapse"
-                    class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
-                        class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navcol-1">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
-                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false"
-                                data-toggle="dropdown" href="#">Authors</a>
-                            <div class="dropdown-menu">{{#each data}}<a class="dropdown-item"
-                                    href="data/{{this._id}}">{{this.Author}}</a>{{/each}}</div>
-                        </li>
-                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false"
-                                data-toggle="dropdown" href="#">Genre </a>
-                            <div class="dropdown-menu"><a class="dropdown-item" href="/action">Action</a><a
-                                    class="dropdown-item" href="/drama">Drama</a><a class="dropdown-item"
-                                    href="#">Comedy</a><a class="dropdown-item" href="/tragedy">Tragedy</a><a
-                                    class="dropdown-item" href="/fantacy">Fantasy</a><a class="dropdown-item"
-                                    href="/slice">Slice of Life</a></div>
-                        </li>
-                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false"
-                                data-toggle="dropdown" href="#">Language </a>
-                            <div class="dropdown-menu"><a class="dropdown-item" href="/english">English</a><a
-                                    class="dropdown-item" href="/malayalam">Malayalam</a><a class="dropdown-item"
-                                    href="#">Hindi
-                                </a></div>
-                        </li>
-                    </ul>
-                    <form class="form-inline mr-auto" target="_self">
-                        <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input
-                                class="form-control search-field" type="search" id="search-field" name="search"></div>
-                    </form>
-                    {{#if user}}
-                    <div class="nav-item dropdown">
-                        <a href="#" data-toggle="dropdown" class="nav-item nav-link"><img
-                                src="/productimages/{{user.username}}.jpg" class="avatar" alt="Avatar"><b
-                                class="nav-item">{{user.username}}</b></a>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
-                            <a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a>
-                            <a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
-                            <div class="divider dropdown-divider"></div>
-                            <a href="/logout" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a>
-                        </div>
+            max-width: 98%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>header</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Effective-Pricing-Cards.css">
+    <link rel="stylesheet" href="assets/css/Header-Dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/MUSA_carousel-product-cart-slider-1.css">
+    <link rel="stylesheet" href="assets/css/MUSA_carousel-product-cart-slider.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<header class="text-truncate header-dark">
+    <nav class="navbar fixed-top navbar-dark navbar-expand-md bg-dark navigation-clean-search"
+        style="filter: blur(0px) brightness(105%) contrast(106%) grayscale(24%) hue-rotate(360deg);opacity: 0.98;">
+        <div class="container"><a class="navbar-brand" href="#">e-Lib</a><button data-toggle="collapse"
+                class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false"
+                            data-toggle="dropdown" href="#">Authors</a>
+                        <div class="dropdown-menu">{{#each data}}<a class="dropdown-item"
+                                href="data/{{this._id}}">{{this.Author}}</a>{{/each}}</div>
+                    </li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false"
+                            data-toggle="dropdown" href="#">Genre </a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="/action">Action</a><a
+                                class="dropdown-item" href="/drama">Drama</a><a class="dropdown-item"
+                                href="#">Comedy</a><a class="dropdown-item" href="/tragedy">Tragedy</a><a
+                                class="dropdown-item" href="/fantacy">Fantasy</a><a class="dropdown-item"
+                                href="/slice">Slice of Life</a></div>
+                    </li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false"
+                            data-toggle="dropdown" href="#">Language </a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="/english">English</a><a
+                                class="dropdown-item" href="/malayalam">Malayalam</a><a class="dropdown-item"
+                                href="#">Hindi
+                            </a></div>
+                    </li>
+                </ul>
+                <form class="form-inline mr-auto" target="_self" action="/search" method="post">
+                    <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input
+                            class="form-control search-field" type="search" id="search-field" name="search" placeholder="Search Here..."></div>
+                </form>
+                {{#if user}}
+                <div class="nav-item dropdown">
+                    <a href="#" data-toggle="dropdown" class="nav-item nav-link"><img
+                            src="/productimages/{{user.username}}.jpg" class="avatar" alt="Avatar"><b
+                            class="nav-item">{{user.username}}</b></a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
+                        <a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a>
+                        <a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
+                        <div class="divider dropdown-divider"></div>
+                        <a href="/logout" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a>
                     </div>
-                    {{else}}
-                    <span class="navbar-text"><a class="login" href="/login">Log In</a></span><a
-                        class="btn btn-light action-button" role="button" href="/login">Sign Up</a>
-                    {{/if}}
                 </div>
-            </div>
-        </nav>
-        <div class="container hero">
-            <div class="row">
-                <div class="col-md-8 col-lg-8 offset-md-2">
-                    <h1 class="text-center" style="margin: 80px 0px 20px;">The Revolution is Here.</h1>
-                </div>
+                {{else}}
+                <span class="navbar-text"><a class="login" onclick="openForm()">Log In</a></span><a
+                    class="btn btn-light action-button" role="button" href="/login " >Sign Up</a>
+                {{/if}}
             </div>
         </div>
-    </header>
-    <nav class="navbar navbar-dark navbar-expand-md fixed-top sticky-top bg-info d-xl-flex justify-content-xl-center align-items-xl-center navigation-clean-button"
-        data-bss-hover-animate="pulse">
     </nav>
-    {{#if data}}
-    <div class="container">
-
-        <div class="row" style="">
-            {{#each data}}
-            <div class="col-md-2 p-4" style="">
-                <div class="row">
-                    <div class="card mb-4 box-shadow rounded-5 " data-aos="fade-up"
-                        style="height:auto;background-color:lightgray;">
-                        <img class="card-img-top  d-block rounded-5" height="250px"
-                            src="/productimages/{{this._id}}.jpg" alt="Card image cap" style="width: auto;hight: 150px">
-                        <div class="card-body">
-                            <a href="/details/{{this._id}}">
-                                <h5 style="text-align:center;color:red; font-family:fantasy;" class="card-title">
-                                    {{this.Name}}</h5>
-                            </a>
-                            <p class="card-text" style="text-align:center;">{{this.Genre}}</p>
-
-                            {{!-- <p class="card-text">{{this.describtion}}</p> --}}
-                            {{!-- <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">Add to
-                                Cart</button>
-                            --}}
-                        </div>
-                    </div>
-                </div>
+    <div class="container hero">
+       
+        <div class="row">
+            <div class="col-md-8 col-lg-8 offset-md-2">
+                <h1 class="text-center" style="margin: 80px 0px 20px;">#Today a reader, tomorrow a leader.</h1>
+                <fieldset class="bg-dark"
+                    style="border-radius: 10px; text-align: center;filter: blur(0px) brightness(50%) contrast(106%) grayscale(24%) hue-rotate(360deg);opacity: 0.80;">
+                    <p class="text-center mt-2" style="align-self:center; color: white; font-size: 20px;">"A word after a
+                        word
+                        after a word is power."</p>
+                </fieldset>
             </div>
-            {{/each}}
-            {{#each data}}
-            <div class="col-md-2 p-4" style="">
-                <div class="row">
-                    <div class="card mb-4 box-shadow rounded-5 " data-aos="fade-up"
-                        style="height:auto;background-color:lightgray;">
-                        <img class="card-img-top  d-block rounded-5" height="250px"
-                            src="/productimages/{{this._id}}.jpg" alt="Card image cap" style="width: auto;hight: 150px">
-                        <div class="card-body">
-                            <a href="/details/{{this._id}}">
-                                <h5 style="text-align:center;color:red; font-family:fantasy;" class="card-title">
-                                    {{this.Name}}</h5>
-                            </a>
-                            <p class="card-text" style="text-align:center;">{{this.Genre}}</p>
-
-                            {{!-- <p class="card-text">{{this.describtion}}</p> --}}
-                            {{!-- <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">Add to
-                                Cart</button>
-                            --}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{/each}}
-            {{#each data}}
-            <div class="col-md-2 p-4" style="">
-                <div class="row">
-                    <div class="card mb-4 box-shadow rounded-5 " data-aos="fade-up"
-                        style="height:auto;background-color:lightgray;">
-                        <img class="card-img-top  d-block rounded-5" height="250px"
-                            src="/productimages/{{this._id}}.jpg" alt="Card image cap" style="width: auto;hight: 150px">
-                        <div class="card-body">
-                            <a href="/details/{{this._id}}">
-                                <h5 style="text-align:center;color:red; font-family:fantasy;" class="card-title">
-                                    {{this.Name}}</h5>
-                            </a>
-                            <p class="card-text" style="text-align:center;">{{this.Genre}}</p>
-
-                            {{!-- <p class="card-text">{{this.describtion}}</p> --}}
-                            {{!-- <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">Add to
-                                Cart</button>
-                            --}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{/each}}
-            {{#each data}}
-            <div class="col-md-2 p-4" style="">
-                <div class="row">
-                    <div class="card mb-4 box-shadow rounded-5 " data-aos="fade-up"
-                        style="height:auto;background-color:lightgray;">
-                        <img class="card-img-top  d-block rounded-5" height="250px"
-                            src="/productimages/{{this._id}}.jpg" alt="Card image cap" style="width: auto;hight: 150px">
-                        <div class="card-body">
-                            <a href="/details/{{this._id}}">
-                                <h5 style="text-align:center;color:red; font-family:fantasy;" class="card-title">
-                                    {{this.Name}}</h5>
-                            </a>
-                            <p class="card-text" style="text-align:center;">{{this.Genre}}</p>
-
-                            {{!-- <p class="card-text">{{this.describtion}}</p> --}}
-                            {{!-- <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">Add to
-                                Cart</button>
-                            --}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{/each}}
         </div>
     </div>
-    {{else}}
-    {{>empty}}
-    {{/if}}
-    <div class="container">
-        <div class="row mb-4">
-            <a href="/addproducts" class="btn btn-danger ml-auto my-5 mr-5 rounded-pill"
-                style="position: fixed;bottom: 0;right:0;">ADD</a>
+</header>
+<nav class="navbar navbar-dark navbar-expand-md fixed-top sticky-top bg-info d-xl-flex justify-content-xl-center align-items-xl-center navigation-clean-button"
+    data-bss-hover-animate="pulse">
+    <div class="form-popup" id="myForm">
+  <form action="/login" method="post" class="form-container">
+    <h1>Login</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="emailid" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+  </div>
+  <div class="form-popup" id="myForm1">
+  </div>
+</nav>
 
 
 
-        </div>
+
+
+{{#if data}}
+<div class="container">
+<div class="col-md-12 mt-3">
+                    <h1 style="text-align: center;margin-top: 0px;margin-bottom: -2px;">Explore</h1>
+                    <p style="text-align: center;font-family: 'Almendra SC', serif;">Through Out Our Coleection</p>
+                </div>
+    <div class="row" style="">
+        {{#each data}}
+        <a href="/details/{{this._id}}">
+            <div class="col-md-2 p-4" style="">
+                <div class="row">
+                    <div class="card mb-4 box-shadow b-5 " data-aos="fade-up"
+                        style="height:auto;background-color:#e4fcfd;border-radius: 20px;">
+                        <img class="card-img-top  d-block rounded-5 mt-1 ml-1" height="250px"
+                            src="/productimages/{{this._id}}.jpg" alt="Card image cap"
+                            style="align-self: center;width: 95%;hight: 150px;border-top-left-radius: 15px;border-top-right-radius: 15px;">
+                        <div class="card-body">
+                            <a href="/details/{{this._id}}">
+                                <h5 style="text-align:center;color:red; font-family:fantasy;"
+                                    class="card-title sammy-nowrap-2">
+                                    {{this.Name}}</h5>
+                            </a>
+                            <p class="card-text" style="text-align:center;">{{this.Genre}}</p>
+
+                            {{!-- <p class="card-text">{{this.describtion}}</p> --}}
+                            {{!-- <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">Add to
+                                Cart</button>
+                            --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {{/each}}
+         {{#each data}}
+        <a href="/details/{{this._id}}">
+            <div class="col-md-2 p-4" style="">
+                <div class="row">
+                    <div class="card mb-4 box-shadow b-5 " data-aos="fade-up"
+                        style="height:auto;background-color:#e4fcfd;border-radius: 20px;">
+                        <img class="card-img-top  d-block rounded-5 mt-1 ml-1" height="250px"
+                            src="/productimages/{{this._id}}.jpg" alt="Card image cap"
+                            style="align-self: center;width: 95%;hight: 150px;border-top-left-radius: 15px;border-top-right-radius: 15px;">
+                        <div class="card-body">
+                            <a href="/details/{{this._id}}">
+                                <h5 style="text-align:center;color:red; font-family:fantasy;"
+                                    class="card-title sammy-nowrap-2">
+                                    {{this.Name}}</h5>
+                            </a>
+                            <p class="card-text" style="text-align:center;">{{this.Genre}}</p>
+
+                            {{!-- <p class="card-text">{{this.describtion}}</p> --}}
+                            {{!-- <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">Add to
+                                Cart</button>
+                            --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {{/each}}
+         {{#each data}}
+        <a href="/details/{{this._id}}">
+            <div class="col-md-2 p-4" style="">
+                <div class="row">
+                    <div class="card mb-4 box-shadow b-5 " data-aos="fade-up"
+                        style="height:auto;background-color:#e4fcfd;border-radius: 20px;">
+                        <img class="card-img-top  d-block rounded-5 mt-1 ml-1" height="250px"
+                            src="/productimages/{{this._id}}.jpg" alt="Card image cap"
+                            style="align-self: center;width: 95%;hight: 150px;border-top-left-radius: 15px;border-top-right-radius: 15px;">
+                        <div class="card-body">
+                            <a href="/details/{{this._id}}">
+                                <h5 style="text-align:center;color:red; font-family:fantasy;"
+                                    class="card-title sammy-nowrap-2">
+                                    {{this.Name}}</h5>
+                            </a>
+                            <p class="card-text" style="text-align:center;">{{this.Genre}}</p>
+
+                            {{!-- <p class="card-text">{{this.describtion}}</p> --}}
+                            {{!-- <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">Add to
+                                Cart</button>
+                            --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {{/each}}
     </div>
+</div>
+{{else}}
+{{>empty}}
+{{/if}}
+<div class="container">
+    <div class="row mb-4">
+        <a href="/addproducts" class="btn btn-info ml-auto my-5 mr-5 rounded-pill"
+            style="position: fixed;bottom: 0;right:0;">
+            <dd style="color: black;"><strong>ADD</strong></dd> <img class="mb-2" style="height: 2.5rem;width: 2.5rem"
+                src="/images/addbutton.png">
+        </a>
+    </div>
+</div>
 
 </body>
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+ <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>

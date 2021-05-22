@@ -106,4 +106,12 @@ module.exports = {
         });
     });
   },
+  search: (data) => {
+    return new Promise(async(resolve, reject) => {
+      console.log("..............ID :" + data + ".................");
+       let items=await db.get().collection(collection.BOOK_COLLECTION).find({ Name: {$regex: data, $options: "$i"}}).toArray();
+        resolve(items);
+        console.log(items);
+      });
+  },
 };

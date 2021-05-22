@@ -91,13 +91,6 @@ router.get("/slice", function (req, res, next) {
     res.render("user/product", { data, user });
   });
 });
-// router.get("/fantacy", function (req, res, next) {
-//   let user = req.session.user;
-//   userHelper.getGenre("Fantasy").then((data) => {
-//     console.log(response);
-//     res.render("user/product", { data, user });
-//   });
-// });
 router.get("/login", function (req, res, next) {
   if (req.session.user) {
     res.redirect("/");
@@ -117,6 +110,11 @@ router.post("/signup", (req, res) => {
     res.redirect("/login");
   });
 });
+router.post('/search', (req, res) => {
+  userHelper.search(req.body.search).then((data) => {
+    res.render('user/product', { data, user: req.session.user })
+  })
+})
 router.post("/login", (req, res) => {
   userHelper.doLogin(req.body).then((response) => {
     if (response.status) {
