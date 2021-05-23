@@ -173,4 +173,11 @@ router.get("/profile", verifylogin, async (req, res, next) => {
   console.log(books)
 });
 
+router.get("/user_review", verifylogin, async (req, res, next) => {
+  user=req.session.user
+  let books=await userHelper.getbooks(user._id)
+  res.render("user/user_review", {user});
+  console.log(books)
+});
+
 module.exports = router;

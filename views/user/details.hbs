@@ -10,34 +10,36 @@
     <link rel="stylesheet" href="assets/css/MUSA_carousel-product-cart-slider.css">
     <link rel="stylesheet" href="assets/css/Projects-Horizontal.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Almendra+SC">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
-    <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css" integrity="sha384-jbCTJB16Q17718YM9U22iJkhuGbS0Gd2LjaWb4YJEZToOPmnKDjySVa323U+W7Fv" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="assets/css/review.css">
+    <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css"
+        integrity="sha384-jbCTJB16Q17718YM9U22iJkhuGbS0Gd2LjaWb4YJEZToOPmnKDjySVa323U+W7Fv" crossorigin="anonymous">
 </head>
 <nav class="navbar fixed-top navbar-dark navbar-expand-md bg-dark navigation-clean-search ">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="/">e-Lib</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">e-Lib</a>
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#All">Review</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="/addproducts">ADD</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
-    </form>
-  </div>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#All">Review</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="/addproducts">ADD</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
+        </form>
+    </div>
 </nav>
 
 <body>
@@ -47,15 +49,19 @@
             <div class="row projects">
                 <div class="col-sm-6 col-lg-12 item">
                     <div class="row mt-3">
-                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" style="height: 500px; width: 400px;" src="/productimages/{{product._id}}.jpg"></a></div>
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid"
+                                    style="height: 500px; width: 400px;" src="/productimages/{{product._id}}.jpg"></a>
+                        </div>
                         <div class="col">
                             <h3 class="name" style="color: maroon;"><strong>{{product.Name}}</strong></h3>
                             <p class="description" style="color:crimson">Author : {{product.Author}}</p>
                             <p class="description">{{product.description}}</p>
-                             <p class="description">ISBN :{{product.ibn}}</p>
-                              <p class="description">Year of Publication :{{product.yop}}</p>
-                              <p class="description">Genre :{{product.Genre}}</p>
-                              <p class="description"><a href={{product.purchaselink}}><img src="/images/580b57fcd9996e24bc43c462.png" style="width:10rem;height: 3rem;"></a></p>
+                            <p class="description">ISBN :{{product.ibn}}</p>
+                            <p class="description">Year of Publication :{{product.yop}}</p>
+                            <p class="description">Genre :{{product.Genre}}</p>
+                            <p class="description"><a href={{product.purchaselink}}><img
+                                        src="/images/580b57fcd9996e24bc43c462.png"
+                                        style="width:10rem;height: 3rem;"></a></p>
 
                         </div>
                     </div>
@@ -64,22 +70,22 @@
         </div>
         <div>
             <div class="container mt-2">
-        <div class="bg-white rounded shadow-sm p-4 mb-5 rating-review-select-page">
+                <div class="bg-white rounded shadow-sm p-4 mb-5 rating-review-select-page">
                     <h5 class="mb-4">Leave Comment</h5>
                     <p class="mb-2">Rate the Place</p>
                     <div class="mb-4">
                         <span class="star-rating">
-                                 <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
-                                 <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
-                                 <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
-                                 <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
-                                 <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
-                                 </span>
+                            <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
+                            <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
+                            <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
+                            <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
+                            <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
+                        </span>
                     </div>
-                   
-            
-                   
-                    <form action='/addreview' method='post'> 
+
+
+
+                    <form action='/addreview' method='post'>
                         <div class="form-group">
                             <label>Your Comment</label>
                             <textarea name="review" class="form-control"></textarea>
@@ -88,57 +94,101 @@
                             <input type="text" name="bookid" value="{{product._id}}" hidden>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-primary btn-sm" type="submit" onClick="confirm()"> Submit Comment </button>
+                            <button class="btn btn-primary btn-sm" type="submit" onClick="confirm()"> Submit Comment
+                            </button>
                         </div>
                     </form>
                 </div>
-                    <hr>
-                    
-                    </form>
-                </div></div>
-<div class="container">
-            <div class="tab-pane fade active show" id="pills-reviews" role="tabpanel" aria-labelledby="pills-reviews-tab">
-                <div class="bg-white rounded shadow-sm p-4 mb-4 clearfix graph-star-rating" id="All">
-                    <h5 class="mb-0 mb-4">Ratings and Reviews</h5>
-                    <div class="graph-star-rating-header">
-                        <div class="star-rating">
-                            <a href="#"><i class="icofont-ui-rating active"></i></a>
-                            <a href="#"><i class="icofont-ui-rating active"></i></a>
-                            <a href="#"><i class="icofont-ui-rating active"></i></a>
-                            <a href="#"><i class="icofont-ui-rating active"></i></a>
-                            <a href="#"><i class="icofont-ui-rating"></i></a> <b class="text-black ml-2">334</b>
-                        </div>
-                        <p class="text-black mb-4 mt-2">Rated 3.5 out of 5</p>
-                    </div>
-                
-                <div class="bg-white rounded shadow-sm p-4 mb-4 restaurant-detailed-ratings-and-reviews">
-                   
-                    <h5 class="mb-1" >All Ratings and Reviews</h5>
-                     {{#each reviews}}
-                    <div class="reviews-members pt-4 pb-4">
-                        <div class="media">
-                            <a href="#"><img alt=" image" src="/productimages/{{this.username}}.jpg" class="mr-3 rounded-pill" style="height:75px; width:50px"></a>
-                            <div class="media-body">
-                                <div class="reviews-members-header">
-                                    <h6 class="mb-1"><a class="text-black" href="#">{{this.username}}</a></h6>
-                                    <p class="text-gray">Tue, 20 Mar 2020</p>
-                                </div>
-                                <div class="reviews-members-body">
-                                    <p>{{this.review}}</p>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                      {{/each}} 
-               
+                <hr>
+
+                </form>
             </div>
         </div>
-    </div>
-</div>
-</div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <form action="/review/{{id}}" method="POST">
+            <div class="container">
+                <div class="post">
+                    <div class="text">
+                        Thanks for rating us!</div>
+                    <div class="edit">
+                        EDIT</div>
+                </div>
+                <div class="star-widget">
+                    <input type="radio" name="rate" id="rate-5" value="5">
+                    <label for="rate-5" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-4" value="4">
+                    <label for="rate-4" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-3" value="3">
+                    <label for="rate-3" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-2" value="2">
+                    <label for="rate-2" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-1" value="1">
+                    <label for="rate-1" class="fas fa-star"></label>
+                </div>
+            </div>
+        </form>
+
+
+
+        <div class="container">
+
+
+            <div class="bg-white rounded shadow-sm p-4 mb-4 restaurant-detailed-ratings-and-reviews">
+
+                <h5 class="mb-1">All Ratings and Reviews</h5>
+                {{#each reviews}}
+                <div class="graph-star-rating-header">
+                    <div class="star-rating">
+                        <a href="#"><i class="icofont-ui-rating active"></i></a>
+                        <a href="#"><i class="icofont-ui-rating active"></i></a>
+                        <a href="#"><i class="icofont-ui-rating active"></i></a>
+                        <a href="#"><i class="icofont-ui-rating active"></i></a>
+                        <a href="#"><i class="icofont-ui-rating"></i></a>
+                    </div>
+                </div>
+                <div class="reviews-members pt-4 pb-4">
+                    <div class="media">
+                        <a href="#"><img alt=" image" src="/productimages/{{this.username}}.jpg"
+                                class="mr-3 rounded-pill" style="height:75px; width:75px; border-radius:50%"></a>
+                        <div class="media-body">
+                            <div class="reviews-members-header">
+                                <h6 class="mb-1"><a class="text-black" href="#">{{this.username}}</a></h6>
+                                <p class="text-gray">Tue, 20 Mar 2020</p>
+                            </div>
+                            <div class="reviews-members-body">
+                                <p>{{this.review}}</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <hr>
+                {{/each}}
+
+
+            </div>
+
+        </div>
+        </div>
+        </div>
+        </div>
+
 </body>
 
+<script src="https://kit.fontawesome.com/a076d05399.js"> </script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js">
+
+    const post = document.querySelector(".post");
+    const widget = document.querySelector(".star-widget");
+    const editBtn = document.querySelector(".edit");
+    btn.onclick = () => {
+        widget.style.display = "none";
+        post.style.display = "block";
+        editBtn.onclick = () => {
+            widget.style.display = "block";
+            post.style.display = "none";
+        }
+        return false;
+    }
+</script>
