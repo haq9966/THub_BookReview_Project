@@ -41,6 +41,14 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ## Install
 
-    $ git clone https://github.com/YOUR_USERNAME/PROJECT_TITLE
+    $ git clone https://github.com/muneesmmm/bookreview.git
     $ cd PROJECT_TITLE
     $ npm install
+
+___
+
+## Run
+
+    $ npm start
+    .item Project Run @ $ localhost:3000
+ 
