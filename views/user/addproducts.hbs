@@ -1,115 +1,61 @@
 <html>
 
 <head>
-
+   
 
 </head>
-<header class="text-truncate header-dark">
-    <nav class="navbar fixed-top navbar-dark navbar-expand-md bg-dark navigation-clean-search"
-        style=" blur(0px) brightness(105%) contrast(106%) grayscale(24%) hue-rotate(360deg);opacity: 0.98;">
-        <div class="container"><a class="navbar-brand" href="/">e-Lib</a><button data-toggle="collapse"
-                class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
-                    class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false"
-                            data-toggle="dropdown" href="#">Authors</a>
-                        <div class="dropdown-menu">{{#each data}}<a class="dropdown-item"
-                                href="data/{{this._id}}">{{this.Author}}</a>{{/each}}</div>
-                    </li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false"
-                            data-toggle="dropdown" href="#">Genre </a>
-                        <div class="dropdown-menu"><a class="dropdown-item" href="/action">Action</a><a
-                                class="dropdown-item" href="/drama">Drama</a><a class="dropdown-item"
-                                href="#">Comedy</a><a class="dropdown-item" href="/tragedy">Tragedy</a><a
-                                class="dropdown-item" href="/fantacy">Fantasy</a><a class="dropdown-item"
-                                href="/slice">Slice of Life</a></div>
-                    </li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false"
-                            data-toggle="dropdown" href="#">Language </a>
-                        <div class="dropdown-menu"><a class="dropdown-item" href="/english">English</a><a
-                                class="dropdown-item" href="/malayalam">Malayalam</a><a class="dropdown-item"
-                                href="#">Hindi
-                            </a></div>
-                    </li>
-                </ul>
-                <form class="form-inline mr-auto" target="_self" action="/search" method="post">
-                    <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input
-                            class="form-control search-field" type="search" id="search-field" name="search"
-                            placeholder="Search Here..."></div>
-                </form>
-                {{#if user}}
-                <div class="nav-item dropdown">
-                    <a href="#" data-toggle="dropdown" class="nav-item nav-link"><img
-                            src="/productimages/{{user.username}}.jpg" class="avatar" alt="Avatar"><b
-                            class="nav-item">{{user.username}}</b></a>
-                    <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
-                        <a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a>
-                        <a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
-                        <div class="divider dropdown-divider"></div>
-                        <a href="/logout" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a>
-                    </div>
+
+<body>
+
+    <section>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="text-center">Add Product</h2>
+
+                    <form action="/addproducts" method="POST" enctype="multipart/form-data">
+                        <label for="IBM">IBN number</label>
+                        <input type="text" class="form-control" name="ibn" aria-describedby="emailHelp">
+
+                        <label for="">Book Title</label>
+                        <input type="text" class="form-control" name="Name">
+
+                        <label for="">Author</label>
+                        <input type="text" class="form-control" name="Author">
+
+                        <label for="">Language</label>
+                        <input type="text" class="form-control" name="language">
+
+                        <label for="">Cover image</label>
+                        <input type="file" class="form-control" name="image">
+
+                        <label for="">Describtion</label>
+                        <textarea class="form-control" name="description" style="height: 5cm;"></textarea>
+
+                        <label for="">Link to purchase</label>
+                        <input type="url" class="form-control" name="purchaselink">
+
+                        <label for="">Year of Publication</label>
+                        <input type="text" class="form-control" name="yop">
+
+                        <label for="">Genre</label>
+                        <input type="checkbox" name="Genre" id="Genre" name="Genre" value="Action">Action
+                        <input type="checkbox" name="Genre" id="Genre" name="Genre" value="Comedy">Comedy
+                        <input type="checkbox" name="Genre" id="Genre" name="Genre" value="Drama">Drama
+                        <input type="checkbox" name="Genre" id="Genre" name="Genre" value="Tragedy">Tragedy
+                        <input type="checkbox" name="Genre" id="Genre" name="Genre" value="Fantasy">Fantasy
+                        <input type="checkbox" name="Genre" id="Genre" name="Genre" value="Slice of Life">Slice of Life
+                        <input name="userid" value="{{user._id}}" hidden>
+
+                        <br>
+                        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+
+                    </form>
                 </div>
-                {{else}}
-                <span class="navbar-text"><a class="login" onclick="openForm()">Log In</a></span><a
-                    class="btn btn-light action-button" role="button" href="/login ">Sign Up</a>
-                {{/if}}
             </div>
         </div>
-    </nav>
+    </section>
 
-    <body>
-
-        <section>
-            <div class="container mt-5">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="text-center">Add Product</h2>
-
-                        <form style="color: white;" action="/addproducts" method="POST" enctype="multipart/form-data">
-                            <label for="IBM">IBN number</label>
-                            <input type="text" class="form-control" name="ibn" aria-describedby="emailHelp">
-
-                            <label for="">Book Title</label>
-                            <input type="text" class="form-control" name="Name">
-
-                            <label for="">Author</label>
-                            <input type="text" class="form-control" name="Author">
-
-                            <label for="">Language</label>
-                            <input type="text" class="form-control" name="language">
-
-                            <label for="">Cover image</label>
-                            <input type="file" class="form-control" name="image">
-
-                            <label for="">Describtion</label>
-                            <textarea class="form-control" name="description" style="height: 5cm;"></textarea>
-
-                            <label for="">Link to purchase</label>
-                            <input type="url" class="form-control" name="purchaselink">
-
-                            <label for="">Year of Publication</label>
-                            <input type="text" class="form-control" name="yop">
-
-                            <label for="">Genre</label>
-                            <input type="checkbox" name="Genre" id="Genre" name="Genre" value="Action">Action
-                            <input type="checkbox" name="Genre" id="Genre" name="Genre" value="Comedy">Comedy
-                            <input type="checkbox" name="Genre" id="Genre" name="Genre" value="Drama">Drama
-                            <input type="checkbox" name="Genre" id="Genre" name="Genre" value="Tragedy">Tragedy
-                            <input type="checkbox" name="Genre" id="Genre" name="Genre" value="Fantasy">Fantasy
-                            <input type="checkbox" name="Genre" id="Genre" name="Genre" value="Slice of Life">Slice of
-                            Life
-                            <input name="userid" value="{{user._id}}" hidden <br>
-                            <button type="submit" class="btn btn-primary mt-3">Submit</button>
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </body>
+</body>
 
 </html>

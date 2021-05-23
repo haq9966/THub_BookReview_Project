@@ -139,8 +139,8 @@ router.get("/empty", (req, res) => {
   user = req.session.user;
   res.render("user/empty", { user });
 });
-router.get("/addproducts" , verifylogin, function (req, res, next) { 
-  res.render("user/addproducts", { user: req.session.user }); 
+router.get("/addproducts", verifylogin, function (req, res, next) {
+  res.render("user/addproducts");
 });
 router.post("/addproducts", (req, res) => {
   userHelper.addproducts(req.body, (id) => {
@@ -164,20 +164,6 @@ router.get("/logout", (req, res) => {
   req.session.userloggedIn = false;
   req.session.user = null;
   res.redirect("/");
-});
-
-router.get("/profile", verifylogin, async (req, res, next) => {
-  user=req.session.user
-  let books=await userHelper.getbooks(user._id)
-  res.render("user/profile", {user,books});
-  console.log(books)
-});
-
-router.get("/user_review", verifylogin, async (req, res, next) => {
-  user=req.session.user
-  let books=await userHelper.getbooks(user._id)
-  res.render("user/user_review", {user});
-  console.log(books)
 });
 
 module.exports = router;
