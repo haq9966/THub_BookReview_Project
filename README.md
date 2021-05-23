@@ -49,6 +49,6 @@ ___
 
 ## Run
 
-    $ npm start
-    .item Project Run @ $ localhost:3000
+      $ npm start
+## Project Run @ $ localhost:3000
  
