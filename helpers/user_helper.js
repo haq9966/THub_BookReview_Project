@@ -114,4 +114,19 @@ module.exports = {
         console.log(items);
       });
   },
+
+  getbooks: (id) => {
+    return new Promise((resolve, reject) => {
+      console.log("..............ID :" + id + ".................");
+      let book=
+      db.get()
+        .collection(collection.BOOK_COLLECTION)
+        .find({ userid: id }).toArray()
+        console.log(book)
+        resolve(book)
+    });
+  },
+  
 };
+
+
