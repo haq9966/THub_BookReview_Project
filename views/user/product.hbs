@@ -3,84 +3,129 @@
     <style>
         .sammy-nowrap-2 {
 
-            max-width: 98%;
+            max-width: 99%;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
 
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-/* Button used to open the contact form - fixed at the bottom of the page */
-.open-button {
-  background-color: #555;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  right: 28px;
-  width: 280px;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-/* The popup form - hidden by default */
-.form-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
-}
 
-/* Add styles to the form container */
-.form-container {
-  max-width: 300px;
-  padding: 10px;
-  background-color: white;
-}
+        /* Button used to open the contact form - fixed at the bottom of the page */
+        .open-button {
+            background-color: #555;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+            width: 280px;
+        }
 
-/* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-}
+        /* The popup form - hidden by default */
+        .form-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+        }
 
-/* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
+        /* Add styles to the form container */
+        .form-container {
+            max-width: 300px;
+            padding: 10px;
+            background-color: white;
+        }
 
-/* Set a style for the submit/login button */
-.form-container .btn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
-}
+        /* Full-width input fields */
+        .form-container input[type=text],
+        .form-container input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+        }
 
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-  background-color: red;
-}
+        /* When the inputs get focus, do something */
+        .form-container input[type=text]:focus,
+        .form-container input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
 
-/* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
-}
-</style>
+        /* Set a style for the submit/login button */
+        .form-container .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Add a red background color to the cancel button */
+        .form-container .cancel {
+            background-color: red;
+        }
+
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover,
+        .open-button:hover {
+            opacity: 1;
+        }
+
+        a.card {
+            border-radius: 4px;
+            background: #5cb9b9;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+            transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+            cursor: pointer;
+
+        }
+
+        
+        a.card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+            /*background-color: mediumaquamarine;*/
+            border-color: #394044;
+            border-width: 5px;
+            background-color: #fff;
+            color: white;
+        }
+
+        .card {
+            border-radius: 4px;
+            background: #fff;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+            transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+            /*background-color: mediumaquamarine;*/
+            background-color: #394044;
+            color: white;
+        }
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>header</title>
@@ -99,7 +144,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <header class="text-truncate header-dark">
     <nav class="navbar fixed-top navbar-dark navbar-expand-md bg-dark navigation-clean-search"
         style="filter: blur(0px) brightness(105%) contrast(106%) grayscale(24%) hue-rotate(360deg);opacity: 0.98;">
-        <div class="container"><a class="navbar-brand" href="#">e-Lib</a><button data-toggle="collapse"
+        <div class="container"><a class="navbar-brand" href="/">e-Lib</a><button data-toggle="collapse"
                 class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
@@ -128,7 +173,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 </ul>
                 <form class="form-inline mr-auto" target="_self" action="/search" method="post">
                     <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input
-                            class="form-control search-field" type="search" id="search-field" name="search" placeholder="Search Here..."></div>
+                            class="form-control search-field" type="search" id="search-field" name="search"
+                            placeholder="Search Here..."></div>
                 </form>
                 {{#if user}}
                 <div class="nav-item dropdown">
@@ -136,28 +182,28 @@ body {font-family: Arial, Helvetica, sans-serif;}
                             src="/productimages/{{user.username}}.jpg" class="avatar" alt="Avatar"><b
                             class="nav-item">{{user.username}}</b></a>
                     <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
-                        <a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a>
-                        <a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
+                        <a href="/profile" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
                         <div class="divider dropdown-divider"></div>
                         <a href="/logout" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a>
                     </div>
                 </div>
                 {{else}}
                 <span class="navbar-text"><a class="login" onclick="openForm()">Log In</a></span><a
-                    class="btn btn-light action-button" role="button" href="/login " >Sign Up</a>
+                    class="btn btn-light action-button" role="button" href="/login ">Sign Up</a>
                 {{/if}}
             </div>
         </div>
     </nav>
     <div class="container hero">
-       
+
         <div class="row">
             <div class="col-md-8 col-lg-8 offset-md-2">
-                <h1 class="text-center" style="margin: 80px 0px 20px;">#Today a reader, tomorrow a leader.</h1>
+                <h1 class="text-center" style="font-family:Times new roman; margin: 80px 0px 20px;">#Today a reader, tomorrow a leader.</h1>
                 <fieldset class="bg-dark"
                     style="border-radius: 10px; text-align: center;filter: blur(0px) brightness(50%) contrast(106%) grayscale(24%) hue-rotate(360deg);opacity: 0.80;">
-                    <p class="text-center mt-2" style="align-self:center; color: white; font-size: 20px;">"A word after a
+                    <p class="text-center mt-2"
+                        style="text-shadow: 1px 1px cornsilk; align-self:center; color: white; font-size: 20px;">"A word
+                        after a
                         word
                         after a word is power."</p>
                 </fieldset>
@@ -168,21 +214,21 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <nav class="navbar navbar-dark navbar-expand-md fixed-top sticky-top bg-info d-xl-flex justify-content-xl-center align-items-xl-center navigation-clean-button"
     data-bss-hover-animate="pulse">
     <div class="form-popup" id="myForm">
-  <form action="/login" method="post" class="form-container">
-    <h1>Login</h1>
+        <form action="/login" method="post" class="form-container">
+            <h1>Login</h1>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="emailid" required>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="emailid" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
 
-    <button type="submit" class="btn">Login</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-  </form>
-  </div>
-  <div class="form-popup" id="myForm1">
-  </div>
+            <button type="submit" class="btn">Login</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+    <div class="form-popup" id="myForm1">
+    </div>
 </nav>
 
 
@@ -191,27 +237,27 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 {{#if data}}
 <div class="container">
-<div class="col-md-12 mt-3">
-                    <h1 style="text-align: center;margin-top: 0px;margin-bottom: -2px;">Explore</h1>
-                    <p style="text-align: center;font-family: 'Almendra SC', serif;">Through Out Our Coleection</p>
-                </div>
+    <div class="col-md-12 mt-3">
+        <h1 style="text-align: center;margin-top: 0px;margin-bottom: -2px; font-family: mistral; font-size: 65px;">
+            Explore</h1>
+        <p style="text-align: center;font-family: 'Almendra SC', serif;">Through our Collection</p>
+    </div>
     <div class="row" style="">
         {{#each data}}
         <a href="/details/{{this._id}}">
             <div class="col-md-2 p-4" style="">
                 <div class="row">
-                    <div class="card mb-4 box-shadow b-5 " data-aos="fade-up"
-                        style="height:auto;background-color:#e4fcfd;border-radius: 20px;">
+                    <div class="card " data-aos="fade-up" style="height:auto;border-radius: 20px;">
                         <img class="card-img-top  d-block rounded-5 mt-1 ml-1" height="250px"
                             src="/productimages/{{this._id}}.jpg" alt="Card image cap"
                             style="align-self: center;width: 95%;hight: 150px;border-top-left-radius: 15px;border-top-right-radius: 15px;">
                         <div class="card-body">
                             <a href="/details/{{this._id}}">
-                                <h5 style="text-align:center;color:red; font-family:fantasy;"
+                                <h5 style="text-align:center;color:red; font-family:serif;"
                                     class="card-title sammy-nowrap-2">
                                     {{this.Name}}</h5>
                             </a>
-                            <p class="card-text" style="text-align:center;">{{this.Genre}}</p>
+                            <p class="card-text sammy-nowrap-2" style="text-align:center;">{{this.Genre}}</p>
 
                             {{!-- <p class="card-text">{{this.describtion}}</p> --}}
                             {{!-- <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">Add to
@@ -223,60 +269,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
             </div>
         </a>
         {{/each}}
-         {{#each data}}
-        <a href="/details/{{this._id}}">
-            <div class="col-md-2 p-4" style="">
-                <div class="row">
-                    <div class="card mb-4 box-shadow b-5 " data-aos="fade-up"
-                        style="height:auto;background-color:#e4fcfd;border-radius: 20px;">
-                        <img class="card-img-top  d-block rounded-5 mt-1 ml-1" height="250px"
-                            src="/productimages/{{this._id}}.jpg" alt="Card image cap"
-                            style="align-self: center;width: 95%;hight: 150px;border-top-left-radius: 15px;border-top-right-radius: 15px;">
-                        <div class="card-body">
-                            <a href="/details/{{this._id}}">
-                                <h5 style="text-align:center;color:red; font-family:fantasy;"
-                                    class="card-title sammy-nowrap-2">
-                                    {{this.Name}}</h5>
-                            </a>
-                            <p class="card-text" style="text-align:center;">{{this.Genre}}</p>
 
-                            {{!-- <p class="card-text">{{this.describtion}}</p> --}}
-                            {{!-- <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">Add to
-                                Cart</button>
-                            --}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        {{/each}}
-         {{#each data}}
-        <a href="/details/{{this._id}}">
-            <div class="col-md-2 p-4" style="">
-                <div class="row">
-                    <div class="card mb-4 box-shadow b-5 " data-aos="fade-up"
-                        style="height:auto;background-color:#e4fcfd;border-radius: 20px;">
-                        <img class="card-img-top  d-block rounded-5 mt-1 ml-1" height="250px"
-                            src="/productimages/{{this._id}}.jpg" alt="Card image cap"
-                            style="align-self: center;width: 95%;hight: 150px;border-top-left-radius: 15px;border-top-right-radius: 15px;">
-                        <div class="card-body">
-                            <a href="/details/{{this._id}}">
-                                <h5 style="text-align:center;color:red; font-family:fantasy;"
-                                    class="card-title sammy-nowrap-2">
-                                    {{this.Name}}</h5>
-                            </a>
-                            <p class="card-text" style="text-align:center;">{{this.Genre}}</p>
-
-                            {{!-- <p class="card-text">{{this.describtion}}</p> --}}
-                            {{!-- <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">Add to
-                                Cart</button>
-                            --}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        {{/each}}
     </div>
 </div>
 {{else}}
@@ -284,7 +277,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 {{/if}}
 <div class="container">
     <div class="row mb-4">
-        <a href="/addproducts" class="btn btn-info ml-auto my-5 mr-5 rounded-pill"
+        <a href="/addproducts" class="card btn btn-info ml-auto my-5 mr-5 rounded-pill"
             style="position: fixed;bottom: 0;right:0;">
             <dd style="color: black;"><strong>ADD</strong></dd> <img class="mb-2" style="height: 2.5rem;width: 2.5rem"
                 src="/images/addbutton.png">
@@ -294,14 +287,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 </body>
 <script>
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
 </script>
- <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/bs-init.js"></script>
