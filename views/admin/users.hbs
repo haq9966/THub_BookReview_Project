@@ -1,0 +1,39 @@
+<style>
+    table {
+        counter-reset: section;
+    }
+
+    .count::before {
+        counter-increment: section;
+        content: counter(section);
+    }
+</style>
+<div class="container mt-5">
+    <div class="row mt-4">
+
+    </div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">User name</th>
+                <th scope="col">Email</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+            <tr>
+                <th class="count" scope="row"></th>
+                <td>{{this.username}}</td>
+                <td>{{this.emailid}}</td>
+
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/js/bs-init.js"></script>
+    <script src="/https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
+    <script src="/assets/js/Sidebar-Menu.js"></script>

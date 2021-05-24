@@ -17,7 +17,6 @@ module.exports = {
     });
   },
   addproducts: (products, callback) => {
-    // product.language=product.language.toLowerCase();
     db.get()
       .collection("books")
       .insertOne(products)
@@ -114,4 +113,39 @@ module.exports = {
         console.log(items);
       });
   },
+
+  getbooks: (id) => {
+    return new Promise((resolve, reject) => {
+      console.log("..............ID :" + id + ".................");
+      let book=
+      db.get()
+        .collection(collection.BOOK_COLLECTION)
+        .find({ userid: id }).toArray()
+        console.log(book)
+        resolve(book)
+    });
+  },updatebook: (id, data) => {
+    console.log(data);
+    console.log(id);
+    return new Promise((resolve, reject) => {
+        db.get().collection(collection.BOOK_COLLECTION)
+            .updateOne({ _id: objectId(id) }, {
+                $set: {
+                    Name: data.Name,
+                    Author: data.Author,
+                    language: data.language,
+                    description: data.description,
+                    purchaselink: data.purchaselink,
+                    yop: data.yop,
+                    Genre: data.Genre
+
+                }
+            }).then((response) => {
+                resolve()
+            })
+    })
+}
+  
 };
+
+

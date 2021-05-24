@@ -45,11 +45,8 @@ router.get("/fantacy", function (req, res, next) {
   let user = req.session.user;
   userHelper.getGenre("Fantasy").then((data) => {
     console.log(response);
-    if(data)
-    res.render("user/product", { data, user });
-    else
-    res.render("user/empty",{user});
-
+    if (data) res.render("user/product", { data, user });
+    else res.render("user/empty", { user });
   });
 });
 router.get("/action", function (req, res, next) {
@@ -99,6 +96,9 @@ router.get("/login", function (req, res, next) {
     req.session.userloginErr = false;
   }
 });
+router.get("/signup", function (req, res, next) {
+  res.render("user/signup");
+});
 router.post("/signup", (req, res) => {
   userHelper.doSignUp(req.body).then((response) => {
     let image = req.files.dp;
@@ -110,11 +110,11 @@ router.post("/signup", (req, res) => {
     res.redirect("/login");
   });
 });
-router.post('/search', (req, res) => {
+router.post("/search", (req, res) => {
   userHelper.search(req.body.search).then((data) => {
-    res.render('user/product', { data, user: req.session.user })
-  })
-})
+    res.render("user/product", { data, user: req.session.user });
+  });
+});
 router.post("/login", (req, res) => {
   userHelper.doLogin(req.body).then((response) => {
     if (response.status) {
@@ -140,7 +140,7 @@ router.get("/empty", (req, res) => {
   res.render("user/empty", { user });
 });
 router.get("/addproducts", verifylogin, function (req, res, next) {
-  res.render("user/addproducts");
+  res.render("user/addproducts", { user: req.session.user });
 });
 router.post("/addproducts", (req, res) => {
   userHelper.addproducts(req.body, (id) => {
@@ -166,4 +166,40 @@ router.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
+router.get("/profile", verifylogin, async (req, res, next) => {
+  user = req.session.user;
+  let books = await userHelper.getbooks(user._id);
+  res.render("user/profile", { user, books });
+  console.log(books);
+});
+
+router.get("/user_review", verifylogin, async (req, res, next) => {
+  user = req.session.user;
+  let books = await userHelper.getbooks(user._id);
+  res.render("user/user_review", { user });
+  console.log(books);
+});
+router.get("/detete-book/:id", (req, res) => {
+  let book = req.params.id;
+  console.log(book);
+  adminHelper.deletebook(book).then((response) => {
+    res.redirect("/profile");
+  });
+});
+router.get('/edit-book/:id', async (req, res) => {
+  let book = await userHelper.getSelectedProducts(req.params.id)
+  console.log(book);
+  res.render('user/edit-book', { book })
+
+})
+router.post('/edit-book/:id', (req, res) => {
+  userHelper.updatebook(req.params.id, req.body).then(() => {
+    res.redirect('/profile')
+    if (req.files.image) {
+      let id = req.params.id
+      let image = req.files.image
+      image.mv('./public/hotel-images/' + id + '.jpg')
+    }
+  })
+})
 module.exports = router;

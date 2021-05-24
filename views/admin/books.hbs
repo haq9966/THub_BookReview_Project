@@ -1,0 +1,48 @@
+<style>
+  table {
+    counter-reset: section;
+  }
+
+  .count::before {
+    counter-increment: section;
+    content: counter(section);
+  }
+</style>
+<div class="container mt-5">
+  <div class="row mt-4">
+
+  </div>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Cover image</th>
+        <th scope="col">Book title</th>
+        <th scope="col">Author Name</th>
+        <th scope="col">Language</th>
+        <th></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {{#each books}}
+      <tr>
+        <th class="count" scope="row"></th>
+        <td><img style="width:70px;height:60px" src="/productimages/{{this._id}}.jpg"></td>
+        <td>{{this.Name}}</td> 
+        <td>{{this.Author}}</td>
+        <td>{{this.language}}</td>
+        <td>
+          <a href="/admin/detete-book/{{this._id}}" class="btn btn-danger"
+            onclick="return confirm('do you want to delete ?')">Delete</a>
+        </td>
+
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/assets/js/bs-init.js"></script>
+  <script src="/https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
+  <script src="/assets/js/Sidebar-Menu.js"></script>
