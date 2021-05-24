@@ -4,6 +4,7 @@ const { response } = require("express");
 var express = require("express");
 var router = express.Router();
 const adminHelper = require("../helpers/admin_helper");
+const { getAllReviews } = require("../helpers/user_helper");
 const userHelper = require("../helpers/user_helper");
 const verifylogin = (req, res, next) => {
   if (req.session.userloggedIn) {
@@ -128,7 +129,7 @@ router.post("/login", (req, res) => {
     }
   });
 });
-router.get("/details/:id", async (req, res) => {
+router.get("/details/:id", verifylogin, async (req, res) => {
   let product = await userHelper.getSelectedProducts(req.params.id);
   user = req.session.user;
   reviews = await userHelper.getAllReviews(req.params.id);
@@ -155,11 +156,12 @@ router.post("/addproducts", (req, res) => {
     });
   });
 });
-router.post("/addreview", (req, res) => {
+router.post("/addreview", async (req, res) => {
   userHelper.addreview(req.body).then(() => {
-    res.redirect("/");
+  res.redirect("/");
   });
 });
+
 router.get("/logout", (req, res) => {
   req.session.userloggedIn = false;
   req.session.user = null;
@@ -173,12 +175,31 @@ router.get("/profile", verifylogin, async (req, res, next) => {
   console.log(books);
 });
 
+// router.post('/addreview/:id', (req, res) => {
+//   let user = req.session.user
+//   id = req.book.id
+//   console.log(req.body);
+
+//   userHelper.addreview(req.body).then((data) => {
+//     reviews = await userHelper.getAllReviews(req.book.id);
+//     userHelper.reviews(id).then((review) => {
+//       console.log("reviews", review);
+//       console.log(data);
+//       res.render('user/view-reviews', { reviews})
+
+//     })
+//   })
+// });
+
+
 router.get("/user_review", verifylogin, async (req, res, next) => {
   user = req.session.user;
   let books = await userHelper.getbooks(user._id);
   res.render("user/user_review", { user });
   console.log(books);
 });
+
+
 router.get("/detete-book/:id", (req, res) => {
   let book = req.params.id;
   console.log(book);

@@ -81,7 +81,7 @@
 
         /* Add a red background color to the cancel button */
         .form-container .cancel {
-            background-color: red;
+            background-color: #5cb9b9;
         }
 
         /* Add some hover effects to buttons */
@@ -124,6 +124,10 @@
             /*background-color: mediumaquamarine;*/
             background-color: #394044;
             color: white;
+        }
+
+        #search-field:hover{
+                background-color: #ddd;
         }
     </style>
     <meta charset="utf-8">
@@ -188,7 +192,7 @@
                     </div>
                 </div>
                 {{else}}
-                <span class="navbar-text"><a class="login" onclick="openForm()">Log In</a></span><a
+                <span class="navbar-text"><a class="login" role="button" onclick="openForm()">Log In</a></span><a
                     class="btn btn-light action-button" role="button" href="/signup ">Sign Up</a>
                 {{/if}}
             </div>
@@ -215,7 +219,7 @@
     data-bss-hover-animate="pulse">
     <div class="form-popup" id="myForm">
         <form action="/login" method="post" class="form-container">
-            <h1>Login</h1>
+            <h1 style="font-family: 'Times New Roman', Times, serif;">Login</h1>
 
             <label for="email"><b>Email</b></label>
             <input type="text" placeholder="Enter Email" name="emailid" required>
