@@ -54,4 +54,15 @@ ___
 
       $ npm start
 ## Project Run @ $ localhost:3000
- 
+
+## Possible issue
+
+Incase of any errors pertaining to bcrypt module.
+
+    node_module
+Delete the file named.
+
+    bcrypt
+ Perform the command.
+    
+    $ npm install bcrypt
