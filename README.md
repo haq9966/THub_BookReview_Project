@@ -5,6 +5,7 @@ The users will be able to review any products(books), see its details, view revi
 The front end was created using express-handlebars, back end was facilitated by node.js and mongodb. There are two modules admin and users, as the name suggests it provide administrator and user previlages respectively.
     
 This is only the core of an ambitious project. It is possible to further enhance this site by adding more features like audiobooks, further increasing the collection of books, providing multiple purchase links, signing in with the popular social media accounts, creating a companion mobile app, in browser e-book reader are some of the plethora of features that could possibly be added in the near future.
+
     Website: bit.ly/e--lib
     
 ## Requirements
