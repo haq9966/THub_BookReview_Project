@@ -6,7 +6,7 @@ The front end was created using express-handlebars, back end was facilitated by 
     
 This is only the core of an ambitious project. It is possible to further enhance this site by adding more features like audiobooks, further increasing the collection of books, providing multiple purchase links, signing in with the popular social media accounts, creating a companion mobile app, in browser e-book reader are some of the plethora of features that could possibly be added in the near future.
 
-Website: [a link](bit.ly/e--lib)
+Website: [e-Lib](https://traversa.live/)
     
 ## Requirements
 
