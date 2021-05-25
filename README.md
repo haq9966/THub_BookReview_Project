@@ -27,6 +27,14 @@ BFH/rec1ibpKt5BmhDZhh/2021
 For development, you will only need Node.js and a node global package, installed in your environment.
 
 ### Node
+  <a href="https://nodejs.org/">
+    <img
+      alt="Node.js"
+      src="https://nodejs.org/static/images/logo-light.svg"
+      width="300"
+    />
+  </a>
+  
 - #### Node installation on Windows
 
   Just go on [official Node.js website](https://nodejs.org/) and download the installer.
@@ -55,6 +63,11 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
     $ npm install npm -g
 
 ---
+
+## Web Framework
+[![Express Logo](https://i.cloudup.com/zfY6lL7eFa-3000x3000.png)](http://expressjs.com/)
+
+  Fast, unopinionated, minimalist web framework for [node](http://nodejs.org)
 
 ## Install
 
