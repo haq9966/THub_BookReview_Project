@@ -1,3 +1,4 @@
+![BFH Banner](https://trello-attachments.s3.amazonaws.com/542e9c6316504d5797afbfb9/542e9c6316504d5797afbfc1/39dee8d993841943b5723510ce663233/Frame_19.png)
 # E-lib (JS-2 Book Review Platform)
 E-lib is a dynamic website in which users can add books. All the features are only available after a simple Sign Up procedure.
 The users will be able to review any products(books), see its details, view reviews by other users, also go to a purchase website. There is also a handy user page to track recent activity. We have also provide various means to sort the books, by author, by genre, by language. It is also possible to search for a book manually.
@@ -7,6 +8,19 @@ The front end was created using express-handlebars, back end was facilitated by 
 This is only the core of an ambitious project. It is possible to further enhance this site by adding more features like audiobooks, further increasing the collection of books, providing multiple purchase links, signing in with the popular social media accounts, creating a companion mobile app, in browser e-book reader are some of the plethora of features that could possibly be added in the near future.
 
 Website: [e-Lib](https://traversa.live/)
+## Team members
+
+1. Abdul Hakeem [https://github.com/haq9966]
+2. Muhammed Munees M [https://github.com/muneesmmm]
+3. Akshai Kumar MR [https://github.com/AKSHAYKUMARMR]
+
+## Team Id
+BFH/rec1ibpKt5BmhDZhh/2021
+
+## Link to product walkthrough
+[https://www.loom.com/share/ba2665dfd01140a7aa0dbffb900952c4]
+
+...
     
 ## Requirements
 
