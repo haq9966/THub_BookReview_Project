@@ -1,6 +1,5 @@
 # Book review platform
 
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
     E-lib is a dynamic website in which users can add books. All the features are only available after a simple Sign Up procedure. The users will be able to review any products(books), see its details, view reviews by other users, also go to a purchase website. There is also a handy user page to track recent activity. We have also provide various means to sort the books, by author, by genre, by language. It is also possible to search for a book manually.
     
