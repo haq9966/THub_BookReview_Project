@@ -71,7 +71,7 @@ ___
 
 ## Troubleshooting
 
-Incase of any errors pertaining to bcrypt module, navigate to the file 'node_modules' and delete the file named 'bcrypt'. Then complete the step by performing the following commands.
+Incase of any errors pertaining to bcrypt module, navigate to the file `node_modules` and delete the file named `bcrypt`. Then complete the step by performing the following commands.
     
     $ npm install bcrypt
     $ npm audit fix --force
