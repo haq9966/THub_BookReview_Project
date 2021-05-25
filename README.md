@@ -8,7 +8,7 @@
     
     This is only the core of an ambitious project. It is possible to further enhance this site by adding more features like audiobooks, further increasing the collection of books, providing multiple purchase links, signing in with the popular social media accounts, creating a companion mobile app, in browser e-book reader are some of the plethora of features that could possibly be added in the near future.
     Website: bit.ly/e--lib
----
+    
 ## Requirements
 
 For development, you will only need Node.js and a node global package, installed in your environment.
