@@ -1,11 +1,10 @@
 # Book review platform
-
-
-    E-lib is a dynamic website in which users can add books. All the features are only available after a simple Sign Up procedure. The users will be able to review any products(books), see its details, view reviews by other users, also go to a purchase website. There is also a handy user page to track recent activity. We have also provide various means to sort the books, by author, by genre, by language. It is also possible to search for a book manually.
+E-lib is a dynamic website in which users can add books. All the features are only available after a simple Sign Up procedure.
+The users will be able to review any products(books), see its details, view reviews by other users, also go to a purchase website. There is also a handy user page to track recent activity. We have also provide various means to sort the books, by author, by genre, by language. It is also possible to search for a book manually.
     
-    The front end was created using express-handlebars, back end was facilitated by node.js and mongodb. There are two modules admin and users, as the name suggests it provide administrator and user previlages respectively.
+The front end was created using express-handlebars, back end was facilitated by node.js and mongodb. There are two modules admin and users, as the name suggests it provide administrator and user previlages respectively.
     
-    This is only the core of an ambitious project. It is possible to further enhance this site by adding more features like audiobooks, further increasing the collection of books, providing multiple purchase links, signing in with the popular social media accounts, creating a companion mobile app, in browser e-book reader are some of the plethora of features that could possibly be added in the near future.
+This is only the core of an ambitious project. It is possible to further enhance this site by adding more features like audiobooks, further increasing the collection of books, providing multiple purchase links, signing in with the popular social media accounts, creating a companion mobile app, in browser e-book reader are some of the plethora of features that could possibly be added in the near future.
     Website: bit.ly/e--lib
     
 ## Requirements
